@@ -3,16 +3,24 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Animation</title>
+    <title>Sprite</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="wrapper">
+        <img id="sprite" src="animation.png" width="96" height="16">
 
-    <canvas id="character" width="800" height="450"></canvas>
-    <img id="sprite" src="animation.png" width="96" height="16">
-    <script src="main.js"></script>
-
+        <canvas id="character"></canvas>
+        <div id="sky">
+            <canvas id="clouds"></canvas>
+        </div>
+        <div id="grass">
+            <button id="edit">edit</button>
+        </div>
+        <script src="main.js"></script>
+        <script src="clouds.js"></script>
+    </div>
 </body>
 
 </html>

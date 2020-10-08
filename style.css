@@ -3,12 +3,52 @@
     margin: 0;
 }
 
-img {
-    display: block;
+#sky {
+    width: 100vw;
+    height: 70vh;
+    background-color: aqua;
+    background-image: linear-gradient(blue 0, aqua 70%);
 }
 
-canvas {
+#grass {
+    width: 100vw;
+    height: 30vh;
+    background-color: green;
+    background-image: url("./img/grass.png");
+    display: grid;
+}
+
+img {
+    display: none;
+}
+
+#character {
     position: absolute;
-    left: 30px;
-    background-color: #444;
+    bottom: 30vh;
+    background-color: transparent;
+
+}
+
+#clouds {
+    position: absolute;
+    top: 10vh;
+    background-color: transparent;
+}
+
+#edit {
+    height: 70px;
+    width: 200px;
+    margin: auto auto;
+    background-color: brown;
+    font-size: 40px;
+    font-family: arial, sans-serif;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 0 6px black, 0 0 0 12px brown;
+    transition: 0.3s;
+}
+
+#edit:hover {
+    box-shadow: 0 0 0 10px black, 0 0 0 18px brown;
 }
