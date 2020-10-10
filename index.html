@@ -9,17 +9,40 @@
 
 <body>
     <div class="wrapper">
-        <img id="sprite" src="animation.png" width="96" height="16">
+        <img id="sprite" src="animation1.png" width="96" height="16">
+        <div id="hidden">
+            <div>
+                <div id="choose_pixel"></div>
+                <div><button class="hidden_btn">save</button><button class="hidden_btn">clear</button><button class="hidden_btn">exit</button><button class="hidden_btn">reload</button></div>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <aside></aside>
 
+            </div>
+        </div>
         <canvas id="character"></canvas>
         <div id="sky">
             <canvas id="clouds"></canvas>
+            <nav>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </nav>
         </div>
         <div id="grass">
-            <button id="edit">edit</button>
+            <button id="btn_edit">edit</button>
         </div>
-        <script src="main.js"></script>
+        <script src="character.js"></script>
         <script src="clouds.js"></script>
+        <script src="edit.js"></script>
     </div>
 </body>
 

@@ -1,10 +1,12 @@
-const canvas = document.getElementById("character");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
+const canvasCharacter = document.getElementById("character");
+const ctxCharacter = canvasCharacter.getContext("2d");
+canvasCharacter.width = window.innerWidth;
 
+const charactersToChoose = document.querySelectorAll('#sky li');
 
 let sprite = document.getElementById("sprite");
-let currentStep = sprite;
+let currentStep = 0;
+let currentSprite = 0;
 
 const step = 5;
 const resize = 160;
@@ -12,9 +14,9 @@ const jumpHeight = 200;
 let rightPressed = false;
 let leftPressed = false;
 let jump = false;
-canvas.height = jumpHeight + resize;
-let startY = canvas.height - resize
-let x = canvas.width / 2;
+canvasCharacter.height = jumpHeight + resize;
+let startY = canvasCharacter.height - resize
+let x = canvasCharacter.width / 2;
 let y = startY;
 
 function keyDownHandler(e) {
@@ -60,26 +62,24 @@ const walkStand = () => {
     }
 }
 
+ctxCharacter.imageSmoothingEnabled = false;
 let waitForAction = 0;
 const draw = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(sprite, currentStep * 16, 0, 16, 16, x, y, resize, resize);
+    ctxCharacter.clearRect(0, 0, canvasCharacter.width, canvasCharacter.height);
+    ctxCharacter.drawImage(sprite, currentStep * 16, 0, 16, 16, x, y, resize, resize);
     waitForAction++;
 
     if (rightPressed) {
         x += step;
         if (waitForAction % 20 == 0)
-            //setTimeout(walkRight, 50);
             walkRight()
 
     } else if (leftPressed) {
         x -= step;
         if (waitForAction % 20 == 0)
-            //setTimeout(walkLeft, 50);
             walkLeft()
     } else {
         if (waitForAction % 75 == 0)
-            //setTimeout(walkStand, 100);
             walkStand()
     }
 
@@ -95,6 +95,22 @@ const draw = () => {
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
+    canvasCharacter.width = window.innerWidth;
 })
+charactersToChoose[0].addEventListener("click",()=>{
+    sprite.src = 'animation1.png';
+    ctxBufor.drawImage(sprite,0,0);
+    //initEditor();
+})
+charactersToChoose[1].addEventListener("click",()=>{
+    sprite.src = 'animation2.png'
+    ctxBufor.drawImage(sprite,0,0);
+    //initEditor();
+})
+charactersToChoose[2].addEventListener("click",()=>{
+    sprite.src = 'animation3.png';
+    ctxBufor.drawImage(sprite,0,0);
+    //initEditor();
+})
+
 setInterval(draw, 3);

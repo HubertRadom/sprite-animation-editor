@@ -10,6 +10,61 @@
     background-image: linear-gradient(blue 0, aqua 70%);
 }
 
+#clouds {
+    position: absolute;
+    top: 10vh;
+    background-color: transparent;
+}
+
+nav {
+    position: absolute;
+    height: 200px;
+    width: 100vw;
+    top: 4vh;
+    /*background-color: #555;*/
+    z-index: 1;
+}
+
+#sky ul {
+    display: block;
+    height: 100%;
+    width: 900px;
+    margin: 0 auto;
+}
+
+#sky li {
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    height: 200px;
+    width: 200px;
+    padding: 40px;
+    background-color: #999;
+    background-image: url("animation1.png");
+    background-repeat: no-repeat;
+    background-size: 600%;
+    image-rendering: crisp-edges;
+    /*background-clip: content-box;*/
+    border: solid 10px brown;
+    margin: 0 50px;
+    transition: 0.3s;
+}
+
+#sky li:nth-child(2) {
+    background-image: url("animation2.png");
+}
+
+#sky li:nth-child(3) {
+    background-image: url("animation3.png");
+}
+
+#sky li:hover {
+    cursor: pointer;
+    background-color: #BBB;
+    box-shadow: 0 0 15px 15px #CCC;
+}
+
+
 #grass {
     width: 100vw;
     height: 30vh;
@@ -26,16 +81,11 @@ img {
     position: absolute;
     bottom: 30vh;
     background-color: transparent;
+    z-index: 1;
 
 }
 
-#clouds {
-    position: absolute;
-    top: 10vh;
-    background-color: transparent;
-}
-
-#edit {
+#btn_edit {
     height: 70px;
     width: 200px;
     margin: auto auto;
@@ -47,8 +97,93 @@ img {
     border: none;
     box-shadow: 0 0 0 6px black, 0 0 0 12px brown;
     transition: 0.3s;
+    cursor: pointer;
 }
 
-#edit:hover {
+#btn_edit:hover {
     box-shadow: 0 0 0 10px black, 0 0 0 18px brown;
+}
+
+#hidden {
+    display: block;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(150, 150, 150, 0.65);
+    z-index: 2;
+}
+
+#hidden>div {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    background-color: #fff;
+    margin: 10vh auto;
+}
+
+#choose_pixel {
+    width: 512px;
+    height: 512px;
+    background-color: rgba(158, 241, 235, 0.562);
+}
+
+
+.hidden_btn {
+    height: 88px;
+    width: 128px;
+    margin: auto;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden_btn:nth-child(1) {
+    background-color: green;
+}
+
+.hidden_btn:nth-child(2) {
+    background-color: rgb(128, 47, 47);
+}
+
+.hidden_btn:nth-child(3) {
+    background-color: red;
+}
+
+.hidden_btn:nth-child(4) {
+    background-color: blue;
+}
+
+
+#hidden ul {
+    position: absolute;
+    top: 0;
+    left: 512px;
+    height: 600px;
+    width: 250px;
+    /*display: block;*/
+    background-color: red;
+}
+
+#hidden li {
+    display: block;
+    box-sizing: border-box;
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    border: orange 2px solid;
+}
+
+.pixel {
+    float: left;
+    box-sizing: border-box;
+    height: 32px;
+    width: 32px;
+    background-color: white;
+}
+
+.pixel:hover {
+    border: 1px solid black;
+
 }
