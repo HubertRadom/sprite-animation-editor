@@ -25,7 +25,7 @@ function keyDownHandler(e) {
     } else if (e.keyCode == 37) {
         leftPressed = true;
     }
-    if (e.keyCode == 38) {
+    if (e.keyCode == 38 || e.keyCode == 32) {
         jump = true;
     }
 }
@@ -113,4 +113,4 @@ charactersToChoose[2].addEventListener("click",()=>{
     //initEditor();
 })
 
-setInterval(draw, 3);
+setInterval(draw, 8);
